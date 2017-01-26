@@ -1,0 +1,14 @@
+<ion-view view-title="{{ 'HISTORICAL_TITLE' | translate }}">
+  <ion-content>
+    <ion-refresher on-refresh="doRefresh()"></ion-refresher>
+    <div>
+        <ion-list>
+            <ion-item ng-click="callHistorical(item.calleridnum)" href="#/app/phone" class="contactsId itemHistorical" style="height:50px;padding:13px 8px 0 8px" ng-repeat="item in historical" item="item" on-finish-render="Theming">
+                <i class="fa" ng-class="item.inbound ? 'fa-arrow-down' : 'fa-arrow-up'"></i>
+                <label class="Name-item" style="margin-top:-20px"><strong>{{ item.duration }}</strong></label>
+                <label class="Number-item" style="float:right;"><i class="fa fa-phone"></i> {{ item.calleridnum }}</label>
+            </ion-item>            
+        </ion-list>
+    </div>
+  </ion-content>
+</ion-view>

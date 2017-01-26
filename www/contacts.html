@@ -1,0 +1,51 @@
+<ion-view view-title="{{ 'CONTACTS_TITLE' | translate }}">
+
+    <ion-content>
+        <div class='message-noti' style='display:none'></div>
+        <ion-refresher on-refresh="doRefresh()"></ion-refresher>
+
+        <ion-list show-delete="data.showDelete" show-reorder="data.showReorder">
+
+            <ion-item ng-click="ToggleShowGroup('Offline');">{{ 'CONTACTS_OFFLINE' | translate }}<i style="float:right" ng-class="isGroupShown('Offline') ? 'fa-minus' : 'fa-plus'" class="itemContactGeneric fa"></i></ion-item>
+            <ion-item ng-show="isGroupShown('Offline')" class="item-contacts itemContactOffline contactsId item-accordion" ng-repeat="item in contactsOffline" item="item" class="item-remove-animate" on-finish-render="Theming">
+                <div class="itemOfflineContent">
+                    <div class="itemOfflineImage" style="background-image:url({{item.description}})"></div>
+
+                    <label class="Name-item"><strong>{{ item.accountcode }}</strong></label>
+
+                    <label class="Number-item"><i class="fa fa-phone"></i> {{ item.objectName }}</label>
+
+                    <div class="itemOfflineInactive"></div>
+                </div>
+            </ion-item>
+            <ion-item ng-show="!(contactsOffline.length) && isGroupShown('Offline')"><label style="width:50%;margin-left:28%;color:#ccc">No elements to show</label></ion-item>
+            <ion-item ng-click="ToggleShowGroup('Online');">{{ 'CONTACTS_ONLINE' | translate }}<i style="float:right" ng-class="isGroupShown('Online') ? 'fa-minus' : 'fa-plus'" class="itemContactGeneric fa"></i></ion-item>
+            <ion-item ng-click="CallContact(item.objectName)" href="#/app/phone" ng-show="isGroupShown('Online')" class="item-contacts itemContactOnline contactsId item-accordion" ng-repeat="item in contactsOnline" item="item" class="item-remove-animate" on-finish-render="Theming">
+                <div class="itemOnlineContent">
+                    <div class="itemOnlineImage" style="background-image:url({{item.description}})"></div>
+                    <label class="Name-item"><strong>{{ item.accountcode }}</strong></label>
+                    <label class="Number-item"><i class="fa fa-phone"></i> {{ item.objectName }}</label>
+                    <div class="itemOnlineInactive"></div>
+                </div>
+            </ion-item>
+            <ion-item ng-show="!(contactsOnline.length) && isGroupShown('Online')"><label style="width:50%;margin-left:28%;color:#ccc">No elements to show</label></ion-item>
+            <ion-item ng-click="ToggleShowGroup('Local');">{{ 'CONTACTS_LOCAL' | translate }} <i style="float:right" ng-class="isGroupShown('Local') ? 'fa-minus' : 'fa-plus'" class="itemContactGeneric fa"></i></ion-item>
+            <ion-item ng-show="isGroupShown('Local')" class="item-contacts itemContactLocal contactsId item-accordion" ng-repeat="item in contactsLocal" item="item" class="item-remove-animate">
+                <div class="itemLocalContent">
+                    <div class="itemLocalImage"></div>
+                    <label class="Name-item"><strong>{{ item.nombre }}</strong></label>
+                    <label class="Number-item"><i class="fa fa-phone"></i> {{ item.numero }}</label>
+                </div>
+                <ion-delete-button class="ion-minus-circled" ng-click="onItemDelete(item)">
+                </ion-delete-button>
+                <ion-option-button class="button-assertive" ng-click="edit(item)">
+                    Edit
+                </ion-option-button>
+            </ion-item>
+            <ion-item ng-show="!(contactsLocal.length) && isGroupShown('Local')"><label style="width:50%;margin-left:28%;color:#ccc">No elements to show</label></ion-item>
+        </ion-list>
+    </ion-content>
+    <div ng-click="showContact()" id="floating-contacts">
+        <i class="ion-plus"></i>
+    </div>
+</ion-view>

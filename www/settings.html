@@ -1,0 +1,43 @@
+<ion-modal-view ng-cloak>
+  <ion-header-bar>
+    <h1 class="title settingsTitle">{{ 'SETTINGS_TITLE' | translate }}</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeLogin()">{{ 'SETTINGS_CERRAR' | translate }}</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <form ng-submit="saveSettings()">
+      <div>
+        <div class="settingsInput">
+            <label translate="INTRO_NETWORK_HOST" class="labelSettings">{{ 'INTRO_NETWORK_HOST' | translate }}</label>
+            <input style="color:#000" id="Sserver" ng-model="Sserver" type="text"/>
+        </div>
+        <div class="settingsInput">
+            <label class="labelSettings">{{ 'INTRO_NETWORK_NUMBER' | translate }}</label>
+            <input id="Scallerid" ng-model="Scallerid" type="text"/>
+        </div>
+        <div class="settingsInput">
+            <label class="labelSettings">{{ 'INTRO_NETWORK_PASS' | translate }}</label>
+            <input id="SPassword" ng-model="SPassword" type="password"/>
+        </div>
+        
+        <label style="margin-top:15px;" class="item item-input item-select">
+            <div class="input-label">
+              {{ 'INTRO_LANGUAGE' | translate }}
+            </div>
+            <select ng-change="changeLang()" ng-model="data.multipleSelect" id="idioma-select">
+              <option value="Espanol">Español</option>
+              <option value="English" selected>English</option>
+            </select>
+        </label>
+  
+        <ion-toggle ng-model="theme" id="themeSettings" ng-checked="ThemeCheck" ng-click="ChangeTheme(theme)">
+            {{ 'SETTINGS_THEME' | translate }}
+        </ion-toggle>
+        
+        <button style="width:90%;margin-left:5%;margin-top:10px;" id="saveSettings"><i class="fa fa-check"></i> {{ 'SETTINGS_BUTTON' | translate }} </button>
+        
+    </div>
+    </form>
+  </ion-content>
+</ion-modal-view>

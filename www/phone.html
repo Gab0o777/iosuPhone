@@ -1,0 +1,77 @@
+<ion-view view-title="uContact Phone" ng-cloak>
+    <ion-content scroll="false">
+        <div class='message-noti' style='display:none'></div>
+        <div id="phone">
+            <div id="phoneHolder" class="tabHolder">
+                <div id="phone">
+                    <div id="videoContainer">
+                        <video id="remoteview" autoplay=""></video>
+                        <video id="selfview" muted autoplay=""></video>
+                        <div>
+                            <div id="reject_callVideo" class="ion-android-call"></div>
+                            <div id="openKeyboard" class="ion-ios-keypad"></div>
+                        </div>
+                    </div>
+                    <div id="phone-container">
+                        <div id="phonestatus" class="focusCall">
+                            {{ 'PHONE_STATUS_NOTREGISTERED' | translate }}
+                        </div>
+                        <div id="timeinfo" class="focusCall"></div>
+                        <div>
+                            <div id="callerinfo" class="focusCall"></div>
+                            <div id="inoutcall" class="focusCall"></div>
+                        </div>
+                        <div id="numberArea">
+                            <textarea placeholder="{{ 'PHONE_PLACEHOLDER_AREA' | translate }}" id="output"></textarea>
+                            <div id="videoCallActive">
+                                <i class="fa fa-video-camera"></i>
+                            </div>
+
+                        </div>
+
+                        <div id="botonera-phono" style="font-family: 'quicksandregular'">
+                            <div class="key digits" rel="1">1</div>
+                            <div class="key digits" rel="2">2<span>abc</span></div>
+                            <div class="key digits" rel="3">3<span>def</span></div>
+                            <div class="clear"></div>
+                            <div class="key digits" rel="4">4<span>ghi</span></div>
+                            <div class="key digits" rel="5">5<span>jkl</span></div>
+                            <div class="key digits" rel="6">6<span>mno</span></div>
+                            <div class="clear"></div>
+                            <div class="key digits" rel="7">7<span>pqrs</span></div>
+                            <div class="key digits" rel="8">8<span>tuv</span></div>
+                            <div class="key digits" rel="9">9<span>wxyz</span></div>
+                            <div class="clear"></div>
+                            <div class="key special digits" rel="*">*</div>
+                            <div class="key digits" rel="1">0<span>+</span></div>
+                            <div class="key special digits hash" rel="#">#</div>
+                            <div class="clear"></div>
+                            <div id="place_call" class="key2 phoneAnswer" rel="Make Call"><i class="fa fa-phone"></i></div>
+                            <div id="reject_call" class="key2 phoneHangup" rel="Hangup Call"><i class="fa fa-phone"></i></div>
+                            <div class="clear"></div>
+                            <div id="btn_conf_content" style="display: none;">
+                                <div>
+                                    <input placeholder="Conference" onkeypress="return isNumberKey(this)" id="inputconf" type="text" />
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </ion-content>
+    <div id='butHidden' class="butHidden">
+        <i class="fa fa-arrow-up depth" aria-hidden="true"></i>
+    </div>
+    <div id="funcPalette">
+        <button title="Transfer Attended" id="btn_atransfer" class="botonera"><i class="fa fa-mail-reply-all"></i>
+        </button>
+        <button title="Hold" id="btn_hold" class="botonera colhold"><i class="fa fa-hand-o-up"></i></button>
+        <button title="Blind Format" id="btn_btransfer" class="botonera"><i class="fa fa-mail-reply"></i></button>
+        <button title="Conference" id="btn_conf" class="botonera"><i class="fa fa-users"></i></button>
+        <button title="Mute" id="btn_mute" class="botonera colmute"><i class="fa fa-microphone-slash"></i></button>
+        <button title="Video" id="btn_video" class="botonera colvideo"><i class="fa fa-video-camera"></i></button>
+    </div>
+</ion-view>

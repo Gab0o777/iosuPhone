@@ -1,0 +1,42 @@
+{
+    "plugins": [
+        "mobi.monaca.plugins.Monaca"
+    ],
+    "framework_version": "3.5",
+    "xcode_version": "7",
+    "cordova_version": "6.2",
+    "plugin_settings": {
+        "cordova-plugin-crosswalk-webview": {
+            "variables": [
+                "XWALK_VERSION=18.48.477.13"
+            ],
+            "additional_params": {
+                "arch": "arm"
+            }
+        }
+    },
+    "external_plugins": [
+        "cordova-plugin-whitelist@1.2.2",
+        "cordova-plugin-splashscreen@3.2.2",
+        "cordova-custom-config@2.0.3",
+        "cordova-plugin-dialogs@1.2.1",
+	   "cordova-plugin-iosrtc@3.2.2",
+        "cordova-plugin-crosswalk-webview@1.7.2",
+        "cordova-plugin-statusbar@2.1.3",
+        "cordova-plugin-device@1.1.2",
+        "cordova-plugin-media-capture@1.3.0",
+        "cordova-plugin-media@2.3.0",
+        "cordova-plugin-vibration@2.1.1",
+        "cordova-plugin-camera@2.2.0"
+    ],
+    "title-ja": "",
+    "title-en": "uPhone",
+    "description-ja": "",
+    "description-en": "",
+    "category": "User Template",
+    "platform": [
+        "android",
+        "ios"
+    ],
+    "name": "generated-1485366707-588269f2ff2af25a63aef3df"
+}

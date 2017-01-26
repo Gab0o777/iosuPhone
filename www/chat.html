@@ -1,0 +1,28 @@
+<ion-view>
+    <ion-nav-title>
+        {{ 'CHAT_TITLE' | translate }} <i class="fa fa-comments"></i>
+    </ion-nav-title>
+    <ion-content>
+        <div class='message-noti' style='display:none'></div>
+        <ion-refresher on-refresh="init()"></ion-refresher>
+        <ion-list>
+            <ion-item ng-repeat="item in contactosOn" ng-click="openChat(item.accountcode,item.objectName)" href="#/app/chatContact/{{item.accountcode}}" class="contactsId itemChat" style="padding:0 !important" on-finish-render="Theming">
+                <div class="itemChatContent">
+                    <div class="itemChatImage" style="background-image:url({{item.description}})"></div>
+                    <label class="Name-item"><strong>{{ item.accountcode }}</strong></label>
+                    <label class="Number-item"><i class="fa fa-phone"></i> {{ item.objectName }}</label>
+                    <div class="itemChatOn"></div>
+                </div>
+            </ion-item>
+
+            <ion-item ng-repeat="item in contactosOff" ng-click="openChat(item.accountcode,item.objectName)" href="#/app/chatContact/{{item.accountcode}}" class="contactsId itemChat" style="padding:0 !important" on-finish-render="Theming">
+                <div class="itemChatContent">
+                    <div class="itemChatImage" style="background-image:url({{item.description}})"></div>
+                    <label class="Name-item"><strong>{{ item.accountcode }}</strong></label>
+                    <label class="Number-item"><i class="fa fa-phone"></i> {{ item.objectName }}</label>
+                    <div class="itemChatOff"></div>
+                </div>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

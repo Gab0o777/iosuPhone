@@ -1,0 +1,1604 @@
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+}
+
+#phone {
+  background:transparent;
+  background-size: contain;
+  height: 100%;
+  width:100%;
+
+}
+
+.redTime {
+    color: #e23f3f;
+}
+
+.message-noti {
+    width:80%;
+    height:30px;
+    height:auto;
+    position:absolute;
+    left:10%;
+    top:2px;
+    background-color: #383838;
+    color: #F0F0F0;
+    font-family: Calibri;
+    font-size: 17px;
+    padding:10px;
+    text-align:center;
+    border-radius: 2px;
+    z-index:9999;
+    -webkit-box-shadow: 0px 0px 24px -1px rgba(56, 56, 56, 1);
+    -moz-box-shadow: 0px 0px 24px -1px rgba(56, 56, 56, 1);
+    box-shadow: 0px 0px 24px -1px rgba(56, 56, 56, 1);
+}
+
+/* Class for the loading background */
+
+.loading{
+  position: absolute !important;
+  top:0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+ 
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+
+}
+
+#wrapper {
+  width:252px;
+  height:1000px;
+  margin:0 auto 0 auto;
+  position:relative;
+  padding:24px 0 0 0;
+  background:#fff;
+}
+
+#botonera-phono {
+  width:252px;
+  height:410px;
+  margin:0 auto 0 auto;
+  position:relative;
+  padding:24px 0 0 0;
+  background:#fff;
+}
+
+.speechTo{
+    position:relative;
+    left:6px;
+    width:78%;
+    height:auto;
+    background-color:#EB2C6E;
+    border-radius:7px;
+    margin-bottom:2px;
+}
+
+.speechTo > textarea{
+    height:80%;
+    width:94%;
+    margin:4px;
+    padding:10px;
+    border-radius:7px;
+    resize: none;
+    overflow:hidden;
+    font-size:15px;
+    background-color:#EB2C6E
+}
+
+.speechTo .toArrow{
+    position:relative;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-radius:7px;
+  margin-top:2px;
+  margin-bottom:-19px;
+  margin-left:-6px;
+  border-top: 15px solid #EB2C6E;
+  width: 0;
+  height: 0;
+  left:0;
+  top:0;
+}
+
+.speechFrom{
+    position:relative;
+    right:0;
+    width:72%;
+    height:auto;
+    background-color:#7DE38D;
+    border-radius:7px;
+    margin-bottom:2px;
+}
+
+.speechFrom > textarea{
+    height:80%;
+    width:94%;
+    padding:10px;
+    margin:4px;
+    border-radius:7px;
+    resize: none;
+    overflow:hidden;
+    font-size:15px;
+    background-color:#7DE38D
+}
+
+.speechFrom .toArrow{
+    position:relative;
+
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-radius:7px;
+  margin-top:2px;
+  margin-bottom:-15px;
+  border-top: 15px solid #7DE38D;
+  width: 0; 
+  height: 0;
+  float:right;
+  margin-right:3px;
+  top:0;
+}
+
+#speech:after{
+   content: ' ';
+    position: absolute;
+	width: 0;
+	height: 0;
+    left: auto;
+	right: -12px;
+    border-radius:7px;
+    top: 0px;
+	bottom: auto;
+	border: 20px solid;
+	border-color: #fff transparent transparent transparent;
+}
+
+textarea {
+    resize: vertical
+}
+
+.mmenu{
+  width:252px;
+  margin:0 auto 0 auto;
+  background:#fff;
+}
+
+.key, .key2 {
+    border-radius: 50px 50px 50px 50px;
+    color: #444;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    font-size: 27px;
+    float: left;
+    box-sizing: border-box;
+    padding: 12px 0 0 0;
+    margin: 0 12px 10px 12px;
+    border: 1px solid #444;
+    cursor: pointer;
+}
+
+.key.special.digits.hash{
+    padding:3px 0 0 0;
+}
+
+.key:hover, .key2:hover {
+    background: #444;
+    color: white;
+    border: none;
+
+}
+
+.key:hover span, .key2:hover span {
+    color: white;
+}
+
+.key span, .key2 span {
+  display:block;
+  color:#444;
+  text-align:center;
+  font-size:12px;
+  text-transform:uppercase;
+}
+
+.key.special, .key2.special {
+    line-height: 53px;
+}
+
+.key.nb, .key2.nb {
+  border:none;
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+.key2.phoneAnswer {
+    background: #2ECC71;
+  border:none;
+  color:#FFF;
+  padding: 6px 0 0 0;
+    line-height: 55px;
+  font-size:40px;
+    margin-left: 55px !important;
+}
+
+.key2.phoneHangup {
+    background:#e23f3f;
+    border:none;
+    color:#FFF;
+    padding: 6px 0 0 0;
+    line-height: 52px;
+    font-size:40px;
+    transform: rotate(136deg);
+}
+.clear {
+  clear:both;
+}
+
+.number{
+
+    color: rgba(80, 213, 237, 0.81);
+    font-size: 40px;
+    margin: 0px !important;
+    font-weight: normal;
+
+}
+
+.fondo{
+    /*background-image: url("../images/background2.png");*/
+    background-repeat: repeat;
+}
+
+.botonera{
+    text-align: center;
+    cursor: pointer;
+    width: 15% !important;
+    height: 43px;
+    background-color: rgb(248,248,248);
+    font-size: 20px;
+    border:0;
+    color: #444444;
+}
+
+.botonera:focus,.botonera:active {
+    outline: none;
+    color:#528bff;
+    text-shadow: 0px 0px 4px #528bff
+}
+
+.butHidden{
+    height:50px;
+    width:50px;
+    background-color:#528bff;
+    position:fixed;
+    bottom:0;left:15px;
+    -webkit-border-top-left-radius: 90px 100px;
+    -webkit-border-top-right-radius: 90px 100px;
+    outline: none;
+    box-shadow:0 0 2px 0 #777;
+}
+
+.depth{
+    color: #fff;
+    font-size:28px;
+    margin-left:23%;
+    margin-top:30%;
+}
+
+
+.botoneraInferior{
+      height: 43px;
+      width: 252px;
+}
+
+#output {
+    background-color: transparent;
+    border: none;
+    font-size: 32px;
+    color: #2d2d2d;
+    outline: none;
+    width: 100% !important;
+    resize: none;
+    display: inline-block;
+    text-align: center;
+    font-family: 'quicksandregular';
+    overflow: hidden;
+    margin-top: 10px;
+    position:absolute;
+    top:0;
+    left:0;
+    padding-top:15px
+}
+
+#videoCallActive{
+    display:none;
+    position:absolute;
+    z-index:9999;
+    width:50px;
+    height:50px;
+    background-color:#EF5350;
+    border-radius:50px;
+    right:47px;
+    top:10px;
+    box-shadow: -1px -1px 10px 2px rgba(239,83,80,1);
+}
+
+#videoCallActive i {
+    color:#fff;
+    font-size:20px;
+    margin:0 auto;
+    margin-top:calc(50% - 10px);
+    margin-left:calc(50% - 10px)
+}
+
+div.fondo.botonera a {
+    color: black;
+}
+
+.red::selection {
+    background: rgba(97, 82, 82, 0.89);
+}
+
+.line-separator{
+    height:1px;
+    background:#717171;
+}
+
+@font-face {
+    font-family: 'quicksandregular';
+    src: url('../fonts/telephone_font/quicksand-regular-webfont.eot');
+    src: url('../fonts/telephone_font/quicksand-regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/telephone_font/quicksand-regular-webfont.woff2') format('woff2'),
+    url('../fonts/telephone_font/quicksand-regular-webfont.woff') format('woff'),
+    url('../fonts/telephone_font/quicksand-regular-webfont.ttf') format('truetype'),
+    url('../fonts/telephone_font/quicksand-regular-webfont.svg#quicksandregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Estilos santi */
+
+#videoContainer {
+    height: 100%;
+    width:100%;
+    display: none;
+    position: absolute;
+}
+
+#videoContainer div{
+    position:absolute;
+    width:70%;
+    z-index:9999;
+    height:60px;
+    bottom:65px;
+    left:15%;
+    background-color:rgba(0,0,0,.7);
+    border-radius:10px;
+}
+
+#reject_callVideo{
+    float:left;
+    font-size:30px;
+    color:#EF5350;
+    margin-left:20px;
+    margin-top:17px;
+    cursor:pointer
+}
+
+#openKeyboard{
+    float:right;
+    font-size:30px;
+    color:#fff;
+    margin-right:20px;
+    margin-top:15px;
+    cursor:pointer
+}
+
+#numberArea{
+    height:60px;
+    padding:0;
+    position:relative;
+    margin-top:-20px;
+    margin-bottom:-10px;
+    width:120%;
+    margin-left:-30px
+}
+
+#remoteview {
+    position: absolute;
+    top:0px;
+    left:-20%;
+    width: 150%;
+    height: 100%;
+}
+
+#selfview {
+    position: absolute;
+    height: 90px;
+    width: 65px;
+    right: 10px;
+    top: 10px;
+}
+
+.VideoBackground{
+    background-color:#313131;
+}
+#phonestatus {
+    font-family: 'quicksandregular';
+    height: 20px;
+    margin-top:15px;
+    text-align: center;
+    line-height: 28px;
+}
+
+#callerinfo {
+  font-family: 'quicksandregular';
+  height: 20px;
+  margin-top: 10px;
+  text-align: center;
+  line-height: 28px;
+  float: left;
+  width: 90%;
+}
+
+#timeinfo {
+  font-family: 'quicksandregular';
+  height: 20px;
+  margin-top: 10px;
+  text-align: center;
+  line-height: 28px;
+}
+
+#inoutcall {
+  float: left;
+  margin-top: 15px;
+}
+
+#botoneraSuperior {
+
+    background: #fff;
+    height: 41px;
+    position: relative;
+    display: block;
+    padding: 7px 0 0 9px;
+
+}
+
+#botoneraSuperior > a {
+    float: left;
+}
+
+#botoneraSuperior > a {
+    width: 43%;
+    padding-top: 4px;
+}
+
+#botoneraSuperior > a.tab {
+
+    color: #444;
+    width: 9%;
+    padding-left: 4px !Important;
+    padding-top: 3px;
+    padding-right: 1px !important;
+    border-right: 1px solid #cacaca;
+    text-align: center;
+    height: 24px;
+    margin-top: 6px;
+    opacity: 0.7;
+
+}
+
+#botoneraSuperior > a.activeTab {
+    transform: scale(1.15);
+    opacity: 1;
+}
+
+#botoneraSuperior > a.tab:hover {
+
+    cursor: pointer;
+}
+
+.noBorder {
+    border: 0px !important;
+}
+
+#chatHolder, #settingsHolder, #historyHolder, #contactsHolder {
+    display: none;
+}
+
+.activePhoneIcon > i {
+    color: #EF5350 !important;
+}
+
+.labelSettings {
+    display: block;
+    text-align: left;
+    margin:0 auto;
+    margin-top: 20px;
+    width:90%;
+    color: #444;
+}
+
+#headerContacts {
+    color: #444;
+}
+
+#headerContacts i {
+
+    color: #444;
+    margin-left: 3px;
+    font-size: 14px;
+}
+
+#headerContacts label {
+    float: right;
+    border: 1px solid #444;
+    border-radius: 50%;
+    height: 17px;
+    width: 17px;
+    cursor: pointer;
+}
+
+.settingsInput > input {
+    width: 90%;
+    height: 32px;
+    border: 1px solid #444;
+    margin:0 auto;
+    margin-top: 10px;
+    padding-left: 10px;
+    border-radius: 8px;
+}
+
+.ChatInput > div input {
+    width: 87%;
+    height: 32px;
+    border: 1px solid #444;
+    margin:0 auto;
+    margin-top: 10px;
+    padding-left: 5%;
+    border-radius: 8px;
+}
+
+.checkbox {
+    width: 8% !important;
+    height: 13px !important;
+}
+
+.lblCheck {
+    width: 36%;
+    display: inline-block;
+    color: #444;
+}
+
+#saveSettings {
+    width: 100%;
+    margin-top: 44px;
+    border: 0px;
+    font-size: 16px;
+    font-weight: normal;
+    background: #2ECC71;
+    height: 41px;
+    color: white;
+    border-radius: 18px;
+    transition: all 0.2s;
+}
+
+#saveSettings:hover {
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.numberHistory {
+    font-size: 18px;
+    float: right;
+    color: #444;
+
+    height: 30px;
+    margin-top: 3px !important;
+}
+
+.nameHistory {
+    display: block;
+    float: left;
+    height: 30px;
+    font-family: sans-serif;
+    font-weight: lighter;
+    margin-top: 5px;
+    color: #444;
+}
+
+.historyDiv {
+    height: 40px;
+    clear: both;
+    border-bottom: 1px solid #444;
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.historyDiv:hover {
+    cursor: pointer;
+    background: rgb(218, 218, 218);
+}
+
+#headerHistory {
+
+    margin-top: 15px;
+    margin-bottom: 10px;
+    color: #636363;
+}
+
+.timeHistory {
+    height: 30px;
+    margin-top: 3px;
+    margin-left: 14px;
+    float: left;
+    font-size: 15px;
+}
+
+
+
+.greenTime {
+    color: #2ECC71 !important;
+}
+
+.lblContacts {
+    float: left;
+    position: absolute;
+    height: 22px;
+    margin-left: 8px;
+    margin-top: 3px;
+    color: #444;
+    font-size: 15px;
+}
+
+.imgContacts {
+    height: 40px;
+    width: 40px;
+    margin-top: 6px;
+    float: left;
+    border-radius: 50%;
+}
+
+.contact {
+    clear: both;
+    height: 52px;
+    border-bottom: 1px solid #bbbbbb;
+    padding-left: 5px;
+}
+
+.lblContactNumber {
+    position: absolute;
+    left: 48px;
+    color: #444;
+    top: 26px;
+    opacity: 0.7;
+    font-size: 13px;
+}
+
+.holderContactLbl {
+    position: relative;
+}
+
+.iconContact1 {
+    font-size: 28px;
+    color: #848484;
+    margin-left: 8px;
+    margin-top: 24px;
+}
+
+.iconContact {
+    font-size: 29px;
+    color: #848484;
+    margin-left: 7px;
+    margin-top: 27px;
+    position: absolute;
+}
+
+.iconOffline {
+    position: absolute;
+    top: 18px;
+    right: 8px;
+    color: #989898;
+}
+
+.iconOnline {
+    position: absolute;
+    top: 18px;
+    right: 8px;
+    color: #7bd87b !important;
+}
+.iconC {
+    display: none;
+    transform: translate(43px, -1px);
+    font-size: 18px;
+    color: #444;
+    opacity: 0.7;
+    transform: translateX(132px);
+}
+
+.iconC:hover {
+    cursor: pointer;
+    color: #414141;
+}
+
+.lblContactActions {
+    margin-left: 5px;
+}
+
+
+.contact:hover {
+    background: #f7f5f5;
+}
+
+.contact:hover .iconC {
+    display: inline-block !important;
+}
+
+#chatContainer {
+    height: 480px;
+    float: left;
+    overflow-y: scroll;
+    width: 100%;
+}
+
+.triangle-isosceles.right {
+    margin-right: 13px;
+    margin-left: 62px;
+    background: #F56E7B;
+    color: #FDFDFD;
+}
+
+.triangle-isosceles {
+    word-wrap: break-word;
+    position: relative;
+    font-size: 13px;
+    padding: 7px;
+    margin: 1em 0 1em;
+    color: #000;
+    background: #f3961c;
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#f9d835), to(#f3961c));
+    background: -moz-linear-gradient(#f9d835, #f3961c);
+    background: -o-linear-gradient(#f9d835, #f3961c);
+    background: linear-gradient(#f9d835, #f3961c);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.triangle-isosceles:after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 50px;
+    border-width: 15px 15px 0;
+    border-style: solid;
+    border-color: transparent;
+    display: block;
+    width: 0;
+}
+
+.triangle-isosceles.right:after {
+    top: 9px;
+    right: -13px;
+    bottom: auto;
+    left: auto;
+    border-width: 5px 0 5px 13px;
+    border-color: transparent #F56E7B;
+}
+
+.triangle-isosceles.left {
+    margin-left: 52px;
+    margin-right: 50px;
+    background: #DCD9D9;
+    color: #414141;
+    font-family: sans-serif;
+    font-weight: 100;
+}
+
+.triangle-isosceles.left:after {
+    top: 9px;
+    left: -12px;
+    bottom: auto;
+    border-width: 5px 13px 5px 0;
+    border-color: transparent #DCD9D9;
+}
+
+#chatText {
+    width: 239px;
+    padding: 5px;
+    resize: none;
+    border: 1px solid #444;
+    border-radius: 8px;
+
+}
+
+#chatText:focus {
+    outline: none;
+}
+
+#actualChat {
+    height: 50px;
+    line-height: 44px;
+    text-align: left;
+    border-bottom: 1px solid grey;
+    margin-bottom: 0px;
+}
+
+.date {
+    position: absolute;
+    margin-top: 21px;
+    font-size: 12px;
+    margin-left: 15px;
+    font-weight: 100;
+    color: #444;
+}
+
+.inputAddContact {
+    display: block;
+    text-align:center;
+    width: 97%;
+    height: 25px;
+    border-radius: 5px;
+    border: 1px solid #c5c5c5;
+    margin: 0px;
+    padding-left: 7px;
+    margin-top: 5px;
+}
+
+#btn-add-contact{
+    margin-top: 44px;
+        border: 0px;
+        font-size: 16px;
+        font-weight: normal;
+        background: #2ECC71;
+        height: 41px;
+        color: white;
+        border-radius: 18px;
+        transition: all 0.1s;
+}
+
+#floating-contacts{
+    width:80px;
+    height:80px;
+    border-radius:50px;
+    background:#528bff;
+    border:0;
+    position:absolute;
+    bottom:10px;
+    right:10px;
+    box-shadow: 2px 2px 3px #999;
+    transition: background-color .1s
+}
+
+#floating-chat{
+    width:47px;
+    height:47px;
+    border-radius:50px;
+    background:#2ECC71;
+    border:0;
+    position:absolute;
+    bottom:5px;
+    right:7px;
+    box-shadow: 2px 2px 3px #999;
+    transition: background-color .1s
+}
+
+
+
+#floating-contacts:active{
+    transform: translate(0px, 2px);
+    box-shadow: 0px 0px 0px 0px rgba(0,0,0,0);
+}
+
+#floating-contacts:before {
+  content: "";  
+  position: absolute;
+  top: 50%;
+  left: 50%;  
+  display: block;
+  width: 0;
+  padding-top: 0;    
+  border-radius: 100%;  
+  background-color: rgba(236, 240, 241, .3);
+  transform: translate(-50%, -50%);
+}
+
+#floating-contacts:active:before {
+  width: 120%;
+  padding-top: 120%;
+  
+  transition: width .1s ease-out, padding-top .1s ease-out;
+}
+
+
+#p-upload-csv{
+     margin-top: 25px;
+        border: 0px;
+        font-size: 16px;
+        font-weight: normal;
+        background: #33acb5;
+        height: 41px;
+        color: white;
+        border-radius: 18px;
+        transition: all 0.2s;
+}
+#btn-upload-contacts {
+    margin-top: 5px;
+    width: 100%;
+    height: 22px;
+    border-radius: 5px;
+    background: #71a56d;
+    border: 0px !important;
+    color: #fbfbfb;
+    padding: 0px !important;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.headerContac {
+    margin-top: 14px;
+    margin-bottom: 14px;
+    font-size: 17px;
+    color: #444;
+    cursor: pointer;
+}
+
+.headerContac > i {
+    float: right;
+}
+
+.iconDelete {
+    color: #d26666;
+    font-size: 17px;
+    position: absolute;
+    transform: translate(155px, 3px);
+}
+
+.chatTab {
+    float: left;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    color: #444;
+    font-size: 20px;
+    text-align: center;
+    border-top: 1px solid;
+    padding-top: 3px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid;
+    margin-bottom: 10px;
+    border-color: #444;
+
+}
+
+.chatTab.active {
+    background: #e4e4e4;
+    color: whitesmoke;
+}
+
+.chatTab.active i {
+    color: #444 !important;
+}
+
+.imgChats {
+    width: 40px;
+    margin-top: 5px;
+    height: 40px;
+    float: left;
+    border-radius: 50%;
+}
+
+#chatsContainer > .contact:hover {
+    cursor: pointer;
+}
+
+.imgAgent {
+    height: 40px;
+    width: 40px;
+    margin-top: 9px;
+    float: left;
+    border-radius: 50%;
+}
+
+#actualChatAgent {
+    margin-left: 10px;
+    line-height: 58px;
+}
+
+.lblWriting {
+    top: 26px;
+    position: absolute;
+    left: 48px;
+}
+
+
+#funcPalette{
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:50px;
+    background-color:rgb(248,248,248);
+    border-top:1px solid rgb(178,178,178);
+    z-index:999
+}
+
+.list .item-accordion {
+  height: 66px;
+  padding-top: 0;
+  padding-bottom: 0;
+  transition: 0.15s all linear;
+}
+
+.list .item.item-accordion.ng-hide {
+  line-height: 0px;
+}
+
+.list .item-accordion.ng-hide {
+ height: 0px;
+}
+
+.list .item-accordion.ng-hide-add {
+  display: none !important;
+}
+
+/*
+clases dark
+*/
+
+.item-dark{
+    background-color:#313131 !important;
+    color: #c5c5c5 !important;
+    border-color:#292929 !important;
+}
+
+.item-dark .Name-item{
+    color:#fff;
+}
+
+.item-dark .Number-item{
+    color:#D4D0CF;
+}
+
+#floating-contacts.dark{
+     background-color:#ba2448 !important;
+    color:#313131 !important;
+    box-shadow:0 0 2px 0 #242424;
+}
+
+.butHidden.dark{
+    background-color:#ba2448 !important;
+    color:#313131 !important;
+    box-shadow:0 0 2px 0 #242424;
+}
+
+.funcPalette{
+    background:#313131 !important;
+    color: #c5c5c5;
+    border-top:1px solid rgb(178,178,178) !important;
+}
+
+.funcButon{
+    background:#313131 !important;
+    color: #c5c5c5;
+}
+
+.menu-items{
+    background: #313131 !important;
+    color: #c5c5c5 !important;
+    border-color:#292929 !important;
+}
+
+
+/* Contact Specific */
+
+.itemContactOffline{
+    padding-left:0;
+    transition: all 0.3s
+}
+
+.itemOfflineContent{
+    height:10%;
+    position:absolute;
+    width:100%;
+}
+
+.itemOfflineContent .itemOfflineImage{
+    margin-top:2px;
+    margin-left:3px;
+    width:60px;
+    height:60px;
+    border-radius:50px;
+    background-size:60px 65px
+}
+
+.itemOfflineContent .Name-item{
+    position:absolute;
+    top:10px;
+    left:75px;
+    color:#7D7B7A
+}
+
+.itemOfflineContent .Number-item{
+    position:absolute;
+    top:33px;
+    left:75px;
+    color:#aaa
+}
+
+.itemOfflineContent .itemOfflineInactive{
+    position:absolute;
+    width:10px;
+    height:10px;
+    border-radius:50px;
+    border:1px solid #D6241D;
+    top:27px;
+    right:10px
+}
+
+
+.itemContactOnline{
+    padding-left:0;
+    transition: all 0.3s
+}
+
+.itemOnlineContent{
+    height:10%;
+    position:absolute;
+    width:100%;
+}
+
+.itemOnlineContent .itemOnlineImage{
+    margin-top:2px;
+    margin-left:3px;
+    width:60px;
+    height:60px;
+    border-radius:50px;
+    background-size:60px 65px
+}
+
+.itemOnlineContent .Name-item{
+    position:absolute;
+    top:10px;
+    left:75px;
+    color:#7D7B7A
+}
+
+.itemOnlineContent .Number-item{
+    position:absolute;
+    top:33px;
+    left:75px;
+    color:#aaa
+}
+
+.itemOnlineContent .itemOnlineInactive{
+    position:absolute;
+    width:10px;
+    height:10px;
+    border-radius:50px;
+    background-color:#0DE828;
+    top:27px;
+    right:10px;
+    text-shadow: 0px 0px 15px #0DE828
+}
+
+.itemContactLocal{
+    padding-left:0
+}
+
+.itemLocalContent{
+    height:10%;
+    position:absolute;
+    width:100%;
+}
+
+.itemLocalContent .itemLocalImage{
+    margin-top:2px;
+    margin-left:3px;
+    width:60px;
+    height:60px;
+    border-radius:50px;
+    background-image:url('images/default.png');
+    background-size:60px 65px
+}
+
+.itemLocalContent .Name-item{
+    position:absolute;
+    top:10px;
+    left:75px;
+    color:#7D7B7A
+}
+
+.itemLocalContent .Number-item{
+    position:absolute;
+    top:33px;
+    left:75px;
+    color:#aaa
+}
+
+#floating-contacts i{
+    font-size:27px;
+    font-weight:200;
+    color:#fff;
+    position:relative;
+    display:table;
+    margin:0 auto;
+    margin-top:33%
+}
+
+
+/* Historical specific */
+
+.items-historical{
+    background: #313131 !important;
+    color: #c5c5c5 !important;
+    border-color:#292929 !important;
+}
+
+
+/* Chat specific  */
+
+.items-chat{
+    background: #313131 !important;
+    color: #c5c5c5 !important;
+    border-color:#292929 !important;
+    padding:0 !important;
+}
+
+.itemChatContent{
+    height:10%;
+    position:absolute;
+    width:100%;
+}
+
+.itemChatContent .itemChatImage{
+    margin-top:3px;
+    margin-left:3px;
+    width:60px;
+    height:60px;
+    border-radius:50px;
+    background-size:60px 65px
+}
+
+.itemChatContent .Name-item{
+    position:absolute;
+    top:10px;
+    left:75px;
+    color:#7D7B7A
+}
+
+.itemChatContent .Number-item{
+    position:absolute;
+    top:33px;
+    left:75px;
+    color:#aaa
+}
+
+.itemChatContent .itemChatOff{
+    position:absolute;
+    width:10px;
+    height:10px;
+    border-radius:50px;
+    border:1px solid #D6241D;
+    top:27px;
+    right:10px
+}
+
+.itemChatContent .itemChatOn{
+    position:absolute;
+    width:10px;
+    height:10px;
+    border-radius:50px;
+    background-color:#0DE828;
+    top:27px;
+    right:10px
+}
+
+.header{
+    background: #313131 !important;
+    color: #c5c5c5 !important;
+    border-color:#313131 !important;
+}
+
+.dark {
+    background: #313131 !important;
+    color: #c5c5c5 !important;
+
+}
+
+.dark #phono {
+    background: #313131 !important;
+    background-size: contain;
+    height: 655px;
+    width: 252px;
+    margin: 0 auto 0 auto;
+}
+
+.dark #botonera-phono {
+    width: 252px;
+    height: 410px;
+    margin: 0 auto 0 auto;
+    position: relative;
+    padding: 24px 0 0 0;
+    background: #313131 !important;
+}
+
+.dark #botoneraSuperior {
+    width: 252px;
+    background: #313131 !important;
+    height: 41px;
+    position: relative;
+    display: block;
+}
+
+.dark .botonera {
+    text-align: center;
+    cursor: pointer;
+    width: 15% !important;
+    height: 43px;
+    background-color: #313131 !important;
+    border: white;
+    font-size: 20px;
+    color: #c5c5c5 !important;
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+}
+
+.dark .key {
+    border-radius: 50px 50px 50px 50px;
+    color: #d8d8d8 !important;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    font-size: 27px;
+    float: left;
+    box-sizing: border-box;
+    padding: 6px 0 0 0;
+    margin: 0 12px 10px 12px;
+    border: 1px solid #d8d8d8;
+    cursor: pointer;
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+}
+
+.dark .key span {
+    display: block;
+    color: #888888 !important;
+    text-align: center;
+    font-size: 12px;
+    text-transform: uppercase;
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+}
+
+.dark .headerContac {
+    color: #cccccc !important;
+}
+
+.dark .lblContacts {
+    float: left;
+    color: whitesmoke !important;
+    position: absolute;
+    height: 22px;
+    margin-left: 8px;
+    margin-top: 3px;
+    opacity: 0.8;
+}
+
+.dark .lblWriting {
+    color: whitesmoke !important;
+}
+
+.dark .lblCheck {
+    color: whitesmoke !important;
+}
+
+.dark .contact:hover {
+    background: #505050 !important;
+}
+
+.dark #output {
+    color: white !important;
+
+}
+
+.dark .focusCall {
+    color: whitesmoke !important;
+
+}
+
+
+.dark .labelSettings {
+    color: whitesmoke !important;
+}
+
+.dark #chatText {
+    background: #717171 !important;
+    color: whitesmoke !important;
+    margin-top: 16px;
+}
+
+.dark .numberHistory {
+    font-size: 20px;
+    float: right;
+    color: #e8e8e8 !important;
+    height: 30px;
+    margin-top: 3px !important;
+}
+
+.dark #actualChatAgent {
+    color: whitesmoke !important;
+}
+
+.dark .nameHistory {
+    color: whitesmoke !important;
+}
+
+.dark #headerContacts {
+    color: whitesmoke !important;
+}
+
+.dark #botoneraSuperior > a.tab {
+    color: whitesmoke !important;
+}
+
+.dark #headerContacts label {
+    border: 1px solid whitesmoke !important;
+}
+
+.dark #headerContacts i {
+    color: whitesmoke !important;
+}
+
+.dark .date {
+    color: whitesmoke !important;
+}
+
+.dark .chatTab i {
+    color: whitesmoke !important;
+}
+
+.dark .lblContactNumber, .dark .lblContactActions i {
+    color: whitesmoke !important;
+}
+
+.dark .historyDiv:hover {
+    background: rgba(218, 218, 218, 0.2) !important;
+}
+
+#activeState {
+    position: relative;
+    top: 18px;
+    float: right;
+    right: 8px;
+    color: #989898 !important;
+}
+.deleteChat {
+    color: #e23f3f !important;
+    position: relative;
+    float: right;
+    margin-top: 24px;
+    margin-right: 7px;
+    font-size: 19px;
+}
+
+#logo {
+    width: 50%;
+    transform: translateY(-5px);
+    margin-top:8px;
+}
+
+.clearfix {
+    overflow: auto;
+}
+
+#typingdiv {
+    height: 7%;
+    transform: translateY(-10px);
+}
+
+.line {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 8px;
+    background-color: #444 !important;
+    float: right;
+    margin-right: 2px;
+}
+
+.dark .line {
+    background-color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.load-3 .line:nth-last-child(1) {
+    animation: loadingC .6s .1s linear infinite;
+}
+
+.load-3 .line:nth-last-child(2) {
+    animation: loadingC .6s .2s linear infinite;
+}
+
+.load-3 .line:nth-last-child(3) {
+    animation: loadingC .6s .3s linear infinite;
+}
+
+@keyframes loadingC {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(0, 7px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+#btn_conf_content {
+    position: absolute;
+    top: -35px;
+    right: -40px;
+    border-radius:5px;
+    box-shadow: -1px 1px 30px -2px rgba(82,139,255,1);
+}
+
+#btn_conf_content input {
+    padding: 4px;
+    border:1px solid #528bff;
+    border-radius:5px;
+}
+
+#btn_conf_content input:focus {
+    outline: none;
+}
+
+#p-upload-csv {   
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+#upload-contacts {
+    position: absolute;
+    top: 110px;
+    right: -20px;
+    min-width: 50%;
+    min-height: 50%;
+    font-size: 999px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    background: red !important;
+    cursor: inherit;
+    display: block;
+    cursor: pointer;
+}
+
+#ownUsers .lblContactActions {
+    margin-left: 30px;
+}

@@ -1,0 +1,27 @@
+<ion-view ng-init="init()" style="background-color:#EFFBFF">
+    <ion-nav-title></ion-nav-title>
+    <ion-nav-buttons side="left">
+        <button ng-click="goBack()" class="button back-button buttons button-clear header-item">
+            <i class="icon ion-ios-arrow-back"></i> 
+            <img style="position:absolute;left:-10px;top:-4px;width:40px;border-radius:50px" src="{{image}}">
+            <label style="position:absolute;top:4px;left:30px;margin-left:5px;font-size:17px">{{contactName}}</label>
+        </button>
+    </ion-nav-buttons>
+    <ion-content style="background-color:#EFFBFF;height:83%">
+        <ion-list>
+
+            <ion-item ng-repeat="mensaje in historic track by $index" style="padding-bottom:0" ng-class="{true : 'speechFrom', false : 'speechTo'}[mensaje.self]" on-finish-render="beautify">
+                <div class="toArrow"></div>
+                <textarea disabled elastic>{{mensaje.mensaje}}</textarea>
+            </ion-item>
+
+        </ion-list>
+    </ion-content>
+    <div style="position:absolute;bottom:0;height:51px;width:100%;background-color:#EFFBFF"></div>
+    <div id="speech" style="position:absolute;bottom:6px;left:6px;height:45px;width:80%;background-color:#fff;border-radius:7px;box-shadow: 0px 6px 28px -8px rgba(0,0,0,0.75);">
+        <textarea id="speechTa" ng-model="speechTa" style="height:80%;width:94%;padding-top:8px;margin-top:2%;margin-left:2%;border-radius:7px;resize: none;overflow:hidden;font-size:18px" placeholder="{{ 'CHATCONTACT_PLACEHOLDER' | translate }}"></textarea>
+    </div>
+    <div ng-click="send(speechTa)" id="floating-chat">
+        <i style="font-size:15px;font-weight:200;color:#fff;position:relative;display:table;margin:0 auto;margin-top:33%" class="fa fa-paper-plane"></i>
+    </div>
+</ion-view>

@@ -1,0 +1,33 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title newContactTitle">{{ 'CONTACTS_NEWTITLE' | translate }}</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeContact()">{{ 'SETTINGS_CERRAR' | translate }}</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <form ng-submit="addContact(name,phoneNumber)">   
+        
+        
+        <div class="settingsInput">
+            <label class="labelSettings">{{ 'CONTACTS_NAME' | translate }}</label>
+            <input class="inputAddContact" id="name" ng-model="name" type="text"/>
+        </div>
+        
+        <div class="settingsInput">
+            <label class="labelSettings">{{ 'CONTACTS_PHONENUMBER' | translate }}</label>
+            <input id="phoneNumber" class="inputAddContact" ng-model="phoneNumber" type="text"/>
+        </div>
+        
+        <button id="btn-add-contact" ng-click="closeContact()" style="width:90%;margin-left:5%;margin-top:30px;">
+           {{ 'CONTACTS_BUTTONSAVE' | translate }} <i class="fa fa-plus"></i> 
+        </button>     
+        
+        <!--<button id="p-upload-csv" style="width:90%;margin-left:5%;margin-top:30px;">
+            Upload CSV <i class="fa fa-upload"></i> 
+        </button> -->     
+        
+    
+    </form>
+  </ion-content>
+</ion-modal-view>
